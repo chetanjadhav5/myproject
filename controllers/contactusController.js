@@ -16,7 +16,14 @@ const postcontactus = async (req, res) => {
     res.status(500).json({ message: "Internal server error", err: err.message });
   }
 };
+const testing =async (req,res)=>{
+  try{
+    res.status(200).json({message:"api call done"});
 
+  }catch(err){
+    res.status(500)
+  }
+}
 const getContactus = async (req, res) => {
   try {
     const contacts = await Contact.getAll();
@@ -34,4 +41,4 @@ const getContactus = async (req, res) => {
   }
 };
 
-module.exports = { postcontactus, getContactus };
+module.exports = { postcontactus, getContactus,testing };
